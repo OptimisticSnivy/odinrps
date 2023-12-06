@@ -1,5 +1,5 @@
 function getComputerChoice(){
-    const choice = ["Rock", "Paper", "Scissors"];
+    const choice=["rock", "paper", "scissors"];
     const randomChoice = Math.floor(Math.random()*choice.length);
     return choice[randomChoice];
 }
@@ -9,17 +9,25 @@ function playRound(playerSelection, computerSelection){
         const res = "Draw!";
         return res;
     }
-    else if(playerSelection=="Rock" && computerSelection=="Scissors" || playerSelection=="Paper" && computerSelection=="Rock" || playerSelection=="Scissors" && computerSelection=="Paper"){
+    else if(playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper"){
         const res = "Player Wins!";
         return res;
     }
-    else if(computerSelection=="Rock" && playerSelection=="Scissors" ||computerSelection=="Paper" && playerSelection=="Rock" || computerSelection=="Scissors" && playerSelection=="Paper"){
+    else if(computerSelection=="rock" && playerSelection=="scissors" ||computerSelection=="paper" && playerSelection=="rock" || computerSelection=="scissors" && playerSelection=="paper"){
         const res = "Computer Wins!";
+        return res;
+    }
+    else{
+        const res = "ERR: User Input must ne wrong!";
         return res;
     }
 }
 
-const playerSelection = "Paper";
-const compchoice = getComputerChoice();
-console.log(compchoice);
-console.log(playRound(playerSelection,compchoice));
+function game(){
+    var playerSelection = prompt("Please Enter Your Choice:");
+
+    let ps = playerSelection.toLowerCase();
+    const cc = getComputerChoice();
+
+    console.log(playRound(ps,cc));
+}

@@ -24,10 +24,29 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    var playerSelection = prompt("Please Enter Your Choice:");
+    let pcount=0;
+    let ccount=0;
+    for(let i=0; i<5; i++){
+        var playerSelection = prompt("Please Enter Your Choice:");
 
-    let ps = playerSelection.toLowerCase();
-    const cc = getComputerChoice();
-
-    console.log(playRound(ps,cc));
+        let ps = playerSelection.toLowerCase();
+        const cc = getComputerChoice();
+        let playres = playRound(ps,cc);
+        if(playres=="Player Wins!"){
+            pcount=pcount+1;
+            console.log("Player Wins this Round!");
+        }
+        else if(playres=="Computer Wins!"){
+            ccount=ccount+1;
+            console.log("Computer Wins this Round!");
+        }  
+        else{
+            console.log("Draw!");
+        }
+    }
+    console.log("Score:-");
+    console.log("Player:" + pcount);
+    console.log("Computer:" + ccount);
 }
+
+game();

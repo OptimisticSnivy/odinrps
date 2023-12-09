@@ -50,3 +50,5 @@ function game(){
 }
 
 game();
+
+//Implementing UI here

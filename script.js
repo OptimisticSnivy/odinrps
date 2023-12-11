@@ -24,11 +24,14 @@ var buttons = document.querySelectorAll(".btn").length;
 for (var i = 0; i < buttons ; i++) {
     const currentbtn = document.querySelectorAll(".btn")[i];
     currentbtn.addEventListener("click", function() {
+        var temp = 0;
+        temp += 1;
+        
         let result = currentbtn.textContent;
         const cc = getComputerChoice();
-        console.log(result+" "+cc);
         playRound(result,cc);
     });
+
 }
 
 // function game(playerChoice){
